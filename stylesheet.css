@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.frameBox {
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Terninger */
+#terningBox {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    gap: 20px;
+    justify-content: center;
+}
+
+.terningBox {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scoretavle */
+#pointBox {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    max-width: 400px;
+}
+
+.scoreRow {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    align-items: center;
+}
+
+.scoreRow input {
+    width: 70px;
+    text-align: center;
+}
+
