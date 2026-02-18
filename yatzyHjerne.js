@@ -7,7 +7,7 @@ let values = [
 
 ]
 
-let throwCount = 0;
+let throwCount = 1;
 
 
 function roll(){
@@ -21,6 +21,8 @@ function roll(){
         }
 
     }
+
+    updateDice()
 }
 
 
@@ -221,21 +223,49 @@ function largeStraightPoints() {
 
     function getResults() {
 
-        let results = new Array[15].fill(0);
+        let results = new Array(15).fill(0);
 
         for (let i = 0; i <= 5; i++) {
-            results[i] = this.sameValuePoints(i+1);
+            results[i] = sameValuePoints(i+1);
         }
         
-        results[6] = this.onePairPoints();
-        results[7] = this.twoPairPoints();
-        results[8] = this.threeSamePoints();
-        results[9] = this.fourSamePoints();
-        results[10] = this.fullHousePoints();
-        results[11] = this.smallStraightPoints();
-        results[12] = this.largeStraightPoints();
-        results[13] = this.chancePoints();
-        results[14] = this.yatzyPoints();
+        results[6] = onePairPoints();
+        results[7] = twoPairPoints();
+        results[8] = threeSamePoints();
+        results[9] = fourSamePoints();
+        results[10] = fullHousePoints();
+        results[11] = smallStraightPoints();
+        results[12] = largeStraightPoints();
+        results[13] = chancePoints();
+        results[14] = yatzyPoints();
 
         return results;
     }
+
+
+    let rollBtn = document.querySelector("#rollBtn")
+
+    rollBtn.addEventListener('click', roll)
+    
+
+    
+    function updateDice(){
+
+        if (throwCount <= 3){
+            
+            for(let i = 0; i < values.length; i++){
+        
+                const terningDiv = document.getElementById('terning'+ (i+1))
+                terningDiv.innerHTML = ''
+        
+                const diceImage = document.getElementById('dice' + values[i].val)
+        
+                terningDiv.appendChild(diceImage.cloneNode())
+               
+    
+            }
+    
+        }
+        
+    }
+    
