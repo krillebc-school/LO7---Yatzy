@@ -10,6 +10,8 @@ let values = [
 let throwCount = 1;
 
 
+
+
 function roll(){
 
     for(terning of values){
@@ -22,7 +24,20 @@ function roll(){
 
     }
 
+
+
     updateDice()
+
+    const scoreRows = document.querySelector('#pointBox').querySelectorAll('input');
+    const scores = getResults();
+
+    for(let i = 0 ; i < scoreRows.length; i++){
+
+        scoreRows[i].value = scores[i];
+
+    }
+
+    
 }
 
 
@@ -252,6 +267,8 @@ function largeStraightPoints() {
     function updateDice(){
 
         if (throwCount <= 3){
+
+            throwCount++
             
             for(let i = 0; i < values.length; i++){
         
